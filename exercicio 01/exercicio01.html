@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>exercicio_01</title>
+</head>
+<style type="text/css">
+	canvas{
+		background:#eee;
+	}
+</style>
+<body>
+	<canvas id="meu_canvas" width="370" height="400">
+		seu navegador nao suporta canvas não parsa
+	</canvas>
+	<br>
+	<canvas id="treino1" width="600" height="600">
+		Oh parsa, aqui é pra treinar viu?
+	</canvas>
+	<br>
+	<canvas id="treino2" width="600" height="600">
+		Oh parsa, aqui é pra treinar viu?
+	</canvas>
+	<br>
+	<canvas id="treino3" width="600" height="600">
+		Oh parsa, aqui é pra treinar viu?
+	</canvas>
+	<br>
+
+	<script type="text/javascript">
+		/*==================================
+			EXERCICIO PRINCIPAL
+		====================================*/
+			var canvas = document.getElementById('meu_canvas');
+			var ctx = canvas.getContext('2d');
+			//preenche quadrado(eixo x, eixo y, largura, altura)
+			ctx.fillRect(10,10,50,50);
+			//desenha quadrado
+			ctx.strokeRect(70,10,50,50);
+			ctx.fillRect(130,10,50,50);
+			ctx.strokeRect(190,10,50,50);
+			ctx.fillRect(250,10,50,50);
+			ctx.strokeRect(310,10,50,50);
+			//desenhando no fundo da tela
+			ctx.fillRect(0,350,370,50);
+		/*==================================
+			TREINO 01: um caminhão de frente!
+		====================================*/
+			var c1 = document.getElementById('treino1');
+			var ctx1 = c1.getContext('2d');
+
+			ctx1.lineWidth = 2;
+			ctx1.strokeStyle = 'black';
+			//bau do caminhao (o bang grandão, sei la o nome disso)
+			ctx1.strokeRect(20,10,560,400);
+			// a luz do bau do lado esquerdo
+			ctx1.strokeRect(30,20,50,20);
+			//a luz do bau do lado direito
+			ctx1.strokeRect(520,20,50,20);
+			//a parte de fora da cabine
+			ctx1.strokeRect(70,140,460,200);
+			//a parte de dentro da cabine
+			ctx1.strokeRect(80,170,440,190);
+			//a parte fina do espelho
+			ctx1.strokeRect(290,170,20,10);
+			//o espelho
+			ctx1.strokeRect(270,180,60,20);
+			//a parte da frente do caminhao (caixa maior)
+			ctx1.fillStyle ='#eee';
+			ctx1.fillRect(40,300,520,160);
+			ctx1.strokeRect(40,300,520,160);
+			//farol 1 lado esquerdo
+			ctx1.strokeRect(50,310,40,30);
+			//fatol 2 lado esquerdo
+			ctx1.strokeRect(100,310,40,30);
+			//luzinha de baixo
+			ctx1.strokeRect(50,350,20,10);
+			//caixa do radiador
+			ctx1.strokeRect(150,310,300,100);
+			//grades do radiador
+			ctx1.strokeRect(165,320,10,80);
+			ctx1.strokeRect(185,320,10,80);
+			ctx1.strokeRect(205,320,10,80);
+			ctx1.strokeRect(225,320,10,80);
+			ctx1.strokeRect(245,320,10,80);
+			ctx1.strokeRect(265,320,10,80);
+			ctx1.strokeRect(285,320,10,80);
+			ctx1.strokeRect(305,320,10,80);
+			ctx1.strokeRect(325,320,10,80);
+			ctx1.strokeRect(345,320,10,80);
+			ctx1.strokeRect(365,320,10,80);
+			ctx1.strokeRect(385,320,10,80);
+			ctx1.strokeRect(405,320,10,80);
+			ctx1.strokeRect(425,320,10,80);
+			//carai, quantas linhas ali em cima ein?
+			//continuando... agora lanterna 1 do lado direito
+			ctx1.strokeRect(460,310,40,30);
+			//segunda lanterna do lado direito
+			ctx1.strokeRect(510,310,40,30);
+			//luzinha lado direito
+			ctx1.strokeRect(530,350,20,10);
+			//para (de dar) choque
+			ctx1.strokeRect(40,430,520,30);
+			//pneu esquerdo
+			ctx1.strokeRect(60,460,80,80);
+			//pneu direito
+			ctx1.strokeRect(460,460,80,80)
+		/*==================================
+			TREINO 02: um armario!!!
+		====================================*/
+			var c2 = document.getElementById('treino2');
+			var ctx2 = c2.getContext('2d');
+			//espesurra e cor da linha
+			ctx2.lineWidth =2;
+			ctx2.strokeStyle = 'black';
+			//caixa total do armario
+			ctx2.strokeRect(10,10,580,480);
+			//porta 1 e sua maçaneta
+			ctx2.strokeRect(20,20,135,320);
+			ctx2.strokeRect(140,160,10,10);
+			//porta 2 e sua maçaneta
+			ctx2.strokeRect(160,20,135,320);
+			ctx2.strokeRect(165,160,10,10);
+			//porta 3 e sua maçaneta
+			ctx2.strokeRect(305,20,135,320);
+			ctx2.strokeRect(425,160,10,10);
+			//porta 4 e sua maçaneta
+			ctx2.strokeRect(445,20,135,320);
+			ctx2.strokeRect(450,160,10,10);
+			//gaveta 1 esquerda e puxador
+			ctx2.strokeRect(20,350,275,60);
+			ctx2.strokeRect(135,375,45,8);
+			//gaveta 2 esquerda e puxador
+			ctx2.strokeRect(20,420,275,60);
+			ctx2.strokeRect(135,445,45,8);
+			//gaveta 1 direita e puxador
+			ctx2.strokeRect(305,350,275,60);
+			ctx2.strokeRect(420,375,45,8);
+			//gaveta 2 direita e puxador
+			ctx2.strokeRect(305,420,275,60);
+			ctx2.strokeRect(420,445,45,8);
+			//pé do armario
+			ctx2.strokeRect(10,490,40,30);
+			ctx2.strokeRect(280,490,40,30);
+			ctx2.strokeRect(550,490,40,30);
+		/*==================================
+			TREINO 03: testando com laço for só de zueiras
+		===================================*/
+			var c3 = document.getElementById('treino3');
+			var ctx3 = c3.getContext('2d');
+			ctx3.fillStyle="orange";
+			ctx3.strokeStyle ='cyan';
+			ctx3.lineWidth = 2;
+			var x =0;
+			for(var c=10;c<=600;c+=50){
+				var h = 0;
+				
+				if(x%2 == 0){
+					h = 1;
+				}
+
+				for(var l=10;l<=600;l+=50){
+					
+					if(h%2 == 0){
+						ctx3.strokeRect(l,c,40,40);
+					}else{
+						ctx3.fillRect(l,c,40,40);
+					}
+					h++;
+				}
+				x++;
+			}
+	</script>
+</body>
+</html>
