@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Exercicio 08 - Loop de animacao com Sprites
+	</title>
+	<script type="text/javascript" src="animacao.js"></script>
+	<script type="text/javascript" src="bola.js"></script>
+</head>
+<style type="text/css">
+	canvas{
+		background:#bbb;
+	}
+</style>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		//criando a bola 1
+		var b1 = new Bola(ctx);
+		b1.x = 100;
+		b1.y = 200;
+		b1.velocidadeX = 10;
+		b1.velocidadeY = -10;
+		b1.cor = 'red';
+		b1.raio = 20;
+		//criando a bola 2
+		var b2 = new Bola(ctx);
+		b2.x = 170;
+		b2.y = 100;
+		b2.velocidadeX = -10;
+		b2.velocidadeY = 20;
+		b2.cor = 'blue';
+		b2.raio = 25;
+
+		var b3 = new Bola(ctx);
+		b3.x = 400;
+		b3.y = 300;
+		b3.velocidadeX = 10;
+		b3.velocidadeY = -20;
+		b3.cor = 'green';
+		b3.raio = 10;
+
+		var b4 = new Bola(ctx);
+		b4.x = 500;
+		b4.y = 300;
+		b4.velocidadeX = 10;
+		b4.velocidadeY = -10;
+		b4.cor = 'yellow';
+		b4.raio = 10;
+
+
+		var animacao = new Animacao(ctx);
+		animacao.novoSprite(b1);
+		animacao.novoSprite(b2);
+		animacao.novoSprite(b3);
+		animacao.novoSprite(b4);
+		//ligando a animacao
+		animacao.ligar();
+	</script>
+</body>
+</html>

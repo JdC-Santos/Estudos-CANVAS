@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio 07 - orientacao a objetos com JS</title>
+	<script type="text/javascript" src="carro.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+		//instanciando objetos da classe carro
+		var MeuCarro = new Carro('Verde',240);
+		MeuCarro.acelerar();
+		var Oponente = new Carro('Azul',200);
+		document.write(MeuCarro.cor+': '+MeuCarro.veloAtual);
+		document.write('<br>');
+		document.write(Oponente.cor+': '+Oponente.veloAtual);
+	</script>
+</body>
+</html>

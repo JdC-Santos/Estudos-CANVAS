@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exercicio 5 - save e restore</title>
+</head>
+<style type="text/css">
+	canvas{
+		background:#bbb;
+	}
+</style>
+<body>
+	<canvas id="c1" width="300" height="300"></canvas>
+	<script type="text/javascript">
+		var c1 = document.getElementById('c1');
+		var ctx1 = c1.getContext('2d');
+		ctx1.fillStyle ='blue';
+		ctx1.lineWidth = 3;
+		ctx1.fillRect(50,20,50,50);
+		ctx1.strokeRect(50,20,50,50);
+		ctx1.save();
+		ctx1.fillStyle ='red';
+		ctx1.lineWidth = 5;
+		ctx1.fillRect(110,20,50,50);
+		ctx1.strokeRect(110,20,50,50);
+		ctx1.restore();
+		ctx1.fillRect(170,20,50,50);
+		ctx1.strokeRect(170,20,50,50);
+	</script>
+</body>
+</html>

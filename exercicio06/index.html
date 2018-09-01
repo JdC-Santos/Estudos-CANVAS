@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercicio 06 - RequestAnimationFrame</title>
+</head>
+<style type="text/css">
+	canvas{
+		background:#bbb;
+	}
+</style>
+<body>
+	<canvas id="c1" width="300" height="300"></canvas>
+	<canvas id="c2" width="600" height="600"></canvas>
+	<script type="text/javascript">
+		/*======================================
+			EXERCICIO PRINCIPAL
+		========================================*/
+			var c1 = document.getElementById('c1');
+			var ctx1 = c1.getContext('2d');
+			//dados da bola
+			var x = 20;
+			var y = 100;
+			var r = 5;
+			//pegando momento inicial
+			var ant = new Date().getTime();
+			//inicia a animacao
+			// requestAnimationFrame(mexerBola);
+			// RequestAnimationFrame(mexerBola)
+			//funcao de animacao
+			function mexerBola(){
+				var agr = new Date().getTime();
+				var decorrido = agr - ant;
+				//limpando o canvas (é tudo eu nessa casa...)
+				ctx1.clearRect(0,0,c1.width,c1.height);
+				//desenhando a ball
+				ctx1.beginPath();
+				ctx1.arc(x,y,r,0,2*Math.PI);
+				ctx1.fill();
+				ant = agr;
+				vel2 =20;
+				x +=vel * decorrido /1000;
+				requestAnimationFrame(mexerBola);
+			}
+		/*======================================
+			TREINO 01: fazer a bolinha subir e descer
+		========================================*/
+			var c2 = document.getElementById('c2');
+			var ctx2 = c2.getContext('2d');
+			var x2 = 20;
+			var y2 = 100;
+			var r2 = 5;
+			var SobeCai = 0;
+			var quicou = 2;
+			caindo = 20;
+			vel2 = 20;
+			var antigo = new Date().getTime();
+			requestAnimationFrame(pulaBola);
+			function pulaBola(){
+				//pegando o tempo em que a funcao foi chamad
+				var agoraJa = new Date().getTime();
+				//calculando a diferença do tempo antigo e atual
+				var decor = agoraJa - antigo;
+				//limpando a casa de novo, ninguem faz nada aqui. 
+				ctx2.clearRect(0,0,c2.width,c2.height);
+				//desenhando
+				ctx2.fillRect(0,400,600,20);
+				ctx2.strokeRect(0,160,600,50);
+				ctx2.beginPath();
+				ctx2.arc(x2,y2,r2,0,2*Math.PI);
+				ctx2.fill();
+				antigo = agoraJa;
+				//aqui ela ta indo pra frente  em determinada velocidade
+				x2 += vel2 * decor /1000;
+				//aqui eu to verificando se ela "bateu no chao", se sim, ela muda pra impar(subir) e a qtd de vezes que ela quicou no chao aumenta em 1, e o numero de "caindo" vai diminuindo conforme ela quica,
+				if(y2 >=400){
+					SobeCai++;
+					quicou++;
+					caindo = 60 - (quicou*2);
+				}
+				if(caindo <= 0){
+					SobeCai++;
+					caindo = 1;
+				}
+				if(SobeCai%2 == 0){
+					y2 += (caindo++) * decor/100;
+				}else{
+					y2 -= (caindo--) * decor/100;
+				}
+				requestAnimationFrame(pulaBola);
+			}
+	</script>
+</body>
+</html>

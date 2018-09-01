@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">	
+	<title>exercicio_03</title>
+</head>
+<style type="text/css">
+	canvas{
+		background:#eee;
+	}
+</style>
+<body>
+	<canvas id="meu_canvas" width="370" height="400">
+		seu navegador não suporta canvas não parsa
+	</canvas>
+	<br>
+	<canvas id="c1" width="600" height="600">
+		seu navegador batata nao parsa
+	</canvas>
+	<br>
+	<canvas id="c2" width="600" height="600">
+		seu nao parsa
+	</canvas>
+	<br>
+	<canvas id="c3" width="600" height="600">
+		seu parsa
+	</canvas>
+	<script type="text/javascript">
+		/*=====================================
+			EXERCICIOS PRINCIPAIS
+		=======================================*/
+			var c = document.getElementById('meu_canvas');
+			var ctx = c.getContext('2d');
+
+			ctx.beginPath();
+			ctx.arc(50,					//x = centro
+					50,					//y = centro
+					40,					//raio
+					260*Math.PI/180,	//inicio: 90 graus
+					180*Math.PI/180,	//fim: 270 graus
+					false);				//sentido anti-horario
+			ctx.stroke();
+			//segundo cirgulo
+			ctx.fillStyle = 'gray';
+			ctx.strokeStyle =' black';
+			ctx.lineWidth = 2;
+			ctx.beginPath();
+			ctx.arc(
+				200,//posicao do centro no X
+				150,//posicao do centro no Y
+				50,//tamanho do raio
+				90*Math.PI/180,//inicio
+				270*Math.PI/180,//fim
+				true);//anti-horario
+			ctx.arc(
+				52,//posicao do centro no X
+				150,//posicao do centro no Y
+				50,//tamanho do raio
+				90*Math.PI/180,//inicio
+				270*Math.PI/180,//fim
+				false);//anti-horario
+			ctx.fill();
+			ctx.stroke();
+			//circulo completo
+			ctx.beginPath();
+			ctx.arc(220,50,40,0,2*Math.PI);
+			ctx.fill();
+			ctx.stroke();
+		/*=====================================
+			TREINO 01: desenhar uma Frô!
+		=======================================*/
+			var c1 = document.getElementById('c1');
+			var ctx1 = c1.getContext('2d');
+			ctx1.fillStyle = 'orange';
+			ctx1.beginPath();
+			ctx1.arc(300,
+					 300,
+					 50,
+					 0,
+					 2*Math.PI	
+					);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(200,
+					 300,
+					 50,
+					 300*Math.PI/180,
+					 60*Math.PI/180,
+					 true);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(250,
+					 213,
+					 50,
+					 0*Math.PI/180,
+					 120*Math.PI/180,
+					 true);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(350,
+					 213,
+					 50,
+					 60*Math.PI/180,
+					 180*Math.PI/180,
+					 true);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(400,
+					 300,
+					 50,
+					 120*Math.PI/180,
+					 240*Math.PI/180,
+					 true);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(350,
+					 387,
+					 50,
+					 180*Math.PI/180,
+					 300*Math.PI/180,
+					 true);
+			ctx1.stroke();
+
+			ctx1.beginPath();
+			ctx1.arc(250,
+					 387,
+					 50,
+					 240*Math.PI/180,
+					 0*Math.PI/180,
+					 true);
+			ctx1.stroke();
+		/*=====================================
+			TREINO 02: um rosto
+		=======================================*/
+			var c2 = document.getElementById('c2');
+			var ctx2 = c2.getContext('2d');
+
+			ctx2.beginPath();
+			ctx2.arc(300,300,200,0,2*Math.PI);
+			ctx2.moveTo(230,250);
+			ctx2.arc(200,250,30,0,2*Math.PI);
+			ctx2.moveTo(430,250);
+			ctx2.arc(400,250,30,0,2*Math.PI);
+			ctx2.moveTo(480,300);
+			ctx2.arc(300,300,180,0,180*Math.PI/180);
+			ctx2.moveTo(480,300);
+			ctx2.arc(300,85,280,50*Math.PI/180,130*Math.PI/180);
+			ctx2.stroke();
+		/*=====================================
+			TREINO 03: e como sempre, todo dia, toda hora,
+			estou sempre com fome!... digo, como sempre, fazer uns bang usando um laço pra ver o results
+		=======================================*/
+			var c3 = document.getElementById('c3');
+			var ctx3 = c3.getContext('2d');
+
+			for(x=0;x<=300;x+=10){
+				ctx3.beginPath();
+				ctx3.arc((120+x),
+						 300,
+						 (0+100),
+						 (180-x)*Math.PI/180,
+						 (180+x)*Math.PI/180
+						);
+				ctx3.stroke();	
+			}
+			for(x=0;x<=190;x+=10){
+				ctx3.beginPath();
+				ctx3.arc((120+x),
+						 300,
+						 (x+100),
+						 (180-x)*Math.PI/180,
+						 (180+x)*Math.PI/180
+						);
+				ctx3.stroke();	
+			}
+	</script>
+</body>
+</html>
