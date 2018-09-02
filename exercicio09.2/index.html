@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Exercicio 09.2 - treino</title>
+	<script type="text/javascript" src="teclado.js"></script>
+	<script type="text/javascript" src="heroi.js"></script>
+	<script type="text/javascript" src="bola.js"></script>
+	<script type="text/javascript" src="animacao.js"></script>
+</head>
+<style type="text/css">
+	body{
+		text-align:center;
+	}	
+	canvas{
+		background:#095;
+	}
+</style>
+<body>
+	<h3>use as setas para andar e o espaço para atirar</h3>
+	<canvas id="canvas3" width="500" height="400"></canvas>
+	<script type="text/javascript">
+		var canvas3 = document.getElementById('canvas3');
+		var ctx3 = canvas3.getContext('2d');
+		var teclado = new Teclado(document);
+		var animacao = new Animacao(ctx3);
+
+		var heroi =  new Heroi(ctx3,teclado,animacao);
+		heroi.x = 10;
+		heroi.y = 100;
+		animacao.novoSprite(heroi);
+		teclado.disparou(ESPACO,function(){
+			heroi.atirar();
+		});
+		animacao.ligar();
+	</script>
+</body>
+</html>
