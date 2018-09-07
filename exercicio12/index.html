@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Exercicio 08 - Loop de animacao com Sprites
+	</title>
+	<!-- <script src="animacao.js"></script> -->
+	<script src="colisor.js"></script>
+	<script src="bola.js"></script>
+</head>
+<style type="text/css">
+	canvas{
+		background:#bbb;
+	}
+</style>
+<body>
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<script type="text/javascript">
+		var canvas = document.getElementById('canvas');
+		var ctx = canvas.getContext('2d');
+		//criando a bola 1
+		var b1 = new Bola(ctx);
+		b1.x = 150;
+		b1.y = 250;
+		b1.velocidadeX = 10;
+		b1.velocidadeY = -10;
+		b1.cor = 'red';
+		b1.raio = 20;
+		//criando a bola 2
+		var b2 = new Bola(ctx);
+		b2.x = 200;
+		b2.y = 250;
+		b2.velocidadeX = -10;
+		b2.velocidadeY = 10;
+		b2.cor = 'blue';
+		b2.raio = 20;
+
+		var colisor = new Colisor();
+		colisor.novoSprite(b1);
+		colisor.novoSprite(b2);
+
+		colisor.aoColidir = function(s1,s2){
+			// alert('POW');
+		}
+
+		requestAnimationFrame(animar);
+		function animar(){
+			ctx.clearRect(0,0,canvas.width,canvas.height);
+
+			b1.atualizar();
+			b2.atualizar();
+			b1.desenhar();
+			b2.desenhar();
+
+			colisor.processar();
+			requestAnimationFrame(animar);
+		}
+	</script>
+</body>
+</html>
