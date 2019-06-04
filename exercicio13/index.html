@@ -31,6 +31,7 @@
 		imgHero.src = "hero.png";
 		//itens para pegar	//x,y
 		var item = [];
+		//instancia vários quadrados pro jogador passar por cima
 		for(var i =0;i<25;i++){
 			item[i] = new Item(ctx,20*i,300);
 		}
@@ -38,10 +39,13 @@
 		//instancia um novo objeto da classe hero
 		var hero = new Hero(ctx,teclado,imgHero);
 		//deixa ele no meio do canvas
+		//define a posicao x inicial do jogador
 		hero.x = 550;
+		//define a posicao y inicial do jogador
 		hero.y = 260;
 		//adiciona o heroi a fila de sprites para ser animado
 		animacao.novoSprite(hero);
+		//adiciona cada item instanciado o array de animacao.
 		for(var i in item){
 			animacao.novoSprite(item[i]);
 		}

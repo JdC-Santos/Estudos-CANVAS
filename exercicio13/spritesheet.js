@@ -45,7 +45,7 @@ Spritesheet.prototype = {
 		//define a largura para cada quadrado
 		var larguraQ = this.img.width / this.numColunas;
 		//define a altura para cada quadrado
-		var alturaQ = this.img.width / this.numLinhas;
+		var alturaQ = this.img.height / this.numLinhas;
 		//desenha no canvas
 		this.ctx.drawImage(
 			this.img,

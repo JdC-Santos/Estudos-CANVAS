@@ -13,7 +13,8 @@ function Hero(ctx,teclado,img){
 	//quantos pixels o heroi vai andar entre 1 animacao e outra
 	this.velocidade = 3;
 	//cria um objeto do tipo Spritesheet para controlar a a sequencia de movimentos do heroi
-	this.sheet = new Spritesheet(ctx,img,9,9);
+	//(contexto, imagem,quantidade de linhas, quantidade de colunas)
+	this.sheet = new Spritesheet(ctx,img,4,9);
 	//intervalo de tempo entre uma animacao e outra
 	this.sheet.intervalo = 60;
 	//inicia com ele parado
